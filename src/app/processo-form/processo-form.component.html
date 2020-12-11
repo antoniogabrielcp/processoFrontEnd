@@ -1,0 +1,82 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #processoForm="ngForm" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" [(ngModel)]="processo.nome" 
+          class="form-control" 
+          id="nome" 
+          name="nome" 
+          placeholder="Entre com o seu Nome"
+          required #nome="ngModel">
+      </div>
+      <div [hidden]="!nome.pristine" class="alert alert-danger">Nome e requerido</div>
+      
+      <div class="form-group">
+        <label for="cpf">CPF</label>
+        <input type="text" [(ngModel)]="processo.cpf" 
+          class="form-control" 
+          id="cpf" 
+          name="cpf" 
+          placeholder="Entre com o seu CPF"
+          required #cpf="ngModel">
+      </div>
+      <div [hidden]="!cpf.pristine" class="alert alert-danger">CPF e requerido</div>
+
+      <div class="form-group">
+        <label for="matricula">Matrícula</label>
+        <input type="text" [(ngModel)]="processo.matricula" 
+          class="form-control" 
+          id="matricula" 
+          name="matricula" 
+          placeholder="Entre com a Matrícula"
+          required #matricula="ngModel">
+      </div>
+      <div [hidden]="!matricula.pristine" class="alert alert-danger">Matrícula e requerido</div>
+
+      <div class="form-group">
+        <label for="orgao">Orgão</label>
+        <input type="text" [(ngModel)]="processo.orgao" 
+          class="form-control" 
+          id="orgao" 
+          name="orgao" 
+          placeholder="Entre com o Orgão"
+          required #orgao="ngModel">
+      </div>
+      <div [hidden]="!orgao.pristine" class="alert alert-danger">Orgão e requerido</div>
+
+      <div class="form-group">
+        <label for="setor">Setor</label>
+        <input type="text" [(ngModel)]="processo.setor" 
+          class="form-control" 
+          id="setor" 
+          name="setor" 
+          placeholder="Entre com o Setor"
+          required #setor="ngModel">
+      </div>
+      <div [hidden]="!setor.pristine" class="alert alert-danger">Setor e requerido</div>
+
+       <div class="form-group">
+        <label for="beneficio">Benefício</label>
+        <input type="text" [(ngModel)]="processo.beneficio" 
+          class="form-control" 
+          id="beneficio" 
+          name="beneficio" 
+          placeholder="Entre com o Tipo do Benefício"
+          required #beneficio="ngModel">
+      </div>
+      <div [hidden]="!beneficio.pristine" class="alert alert-danger">Tipo do Benefício e requerido</div>
+
+      <div class="form-group">
+        <label for="arquivo">Arquivo</label>
+        <input type="file" (change)="onFileChanged($event)" 
+          class="form-control" 
+          id="arquivo" 
+          name="arquivo">
+       
+      </div>
+      <button type="submit" [disabled]="!processoForm.form.valid" 
+        class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>

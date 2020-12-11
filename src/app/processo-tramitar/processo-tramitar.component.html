@@ -1,0 +1,64 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="atualizar()" #processoForm="ngForm">
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" [(ngModel)]="processo.nome" 
+          class="form-control" 
+          id="nome" 
+          name="nome"
+          disabled="true">
+      </div>     
+      
+      <div class="form-group">
+        <label for="cpf">CPF</label>
+        <input type="text" [(ngModel)]="processo.cpf" 
+          class="form-control" 
+          id="cpf" 
+          name="cpf" 
+          disabled="true">
+      </div>      
+
+      <div class="form-group">
+        <label for="matricula">Matrícula</label>
+        <input type="text" [(ngModel)]="processo.matricula" 
+          class="form-control" 
+          id="matricula" 
+          name="matricula" 
+          disabled="true">
+      </div>    
+
+      <div class="form-group">
+        <label for="orgao">Orgão</label>
+        <input type="text" [(ngModel)]="processo.orgao" 
+          class="form-control" 
+          id="orgao" 
+          name="orgao" 
+          disabled="true">
+      </div>  
+
+      <div class="form-group">
+        <label for="beneficio">Benefício</label>
+        <input type="text" [(ngModel)]="processo.beneficio" 
+          class="form-control" 
+          id="beneficio" 
+          name="beneficio" 
+          disabled="true">
+      </div>          
+
+      <div class="form-group">
+        <label for="setor">Setor</label>
+        <input type="text" [(ngModel)]="processo.setor" 
+          class="form-control" 
+          id="setor" 
+          name="setor" 
+          placeholder="Entre com o Setor"
+          required #setor="ngModel">
+      </div>
+      <div [hidden]="!setor.pristine" class="alert alert-danger">Setor e requerido</div>
+     
+      <button type="submit" [disabled]="!processoForm.form.valid" 
+        class="btn btn-info">Tramitar</button>
+    </form>
+  </div>
+</div>

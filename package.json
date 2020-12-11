@@ -19,7 +19,11 @@
     "@angular/platform-browser": "~11.0.3",
     "@angular/platform-browser-dynamic": "~11.0.3",
     "@angular/router": "~11.0.3",
+    "FileSaver": "^0.10.0",
+    "file-saver": "^2.0.5",
+    "lodash-es": "^4.17.15",
     "rxjs": "~6.6.0",
+    "rxjs-compat": "^6.6.3",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },
